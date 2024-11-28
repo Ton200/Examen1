@@ -1,0 +1,7 @@
+{
+  "name": "area-calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
