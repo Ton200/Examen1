@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cálculo del Área</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="rectangleForm" (ngSubmit)="calculateArea()">
+    <!-- Campo para la base -->
+    <ion-item>
+      <ion-label position="floating">Base</ion-label>
+      <ion-input type="number" formControlName="base"></ion-input>
+    </ion-item>
+
+    <!-- Campo para la altura -->
+    <ion-item>
+      <ion-label position="floating">Altura</ion-label>
+      <ion-input type="number" formControlName="height"></ion-input>
+    </ion-item>
+
+    <!-- Botón para calcular el área -->
+    <ion-button expand="block" type="submit" [disabled]="rectangleForm.invalid">
+      Calcular Área
+    </ion-button>
+  </form>
+
+  <!-- Mostrar el resultado si existe -->
+  <div *ngIf="area !== null">
+    <h2>El área del rectángulo es: {{ area }}</h2>
+  </div>
+</ion-content>
